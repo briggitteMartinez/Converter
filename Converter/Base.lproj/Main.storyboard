@@ -29,6 +29,7 @@
                                 <rect key="frame" x="0.0" y="596" width="414" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="snV-0d-al0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ari-FZ-fYU"/>
                                 </connections>
                             </pickerView>
                         </subviews>
