@@ -15,6 +15,7 @@
 		B31472D92590E507009FA365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31472D72590E507009FA365 /* LaunchScreen.storyboard */; };
 		B31472E42590E507009FA365 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31472E32590E507009FA365 /* ConverterTests.swift */; };
 		B31472EF2590E507009FA365 /* ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31472EE2590E507009FA365 /* ConverterUITests.swift */; };
+		B3B49CD3259105CA000D45DC /* CelsiusConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B49CD2259105CA000D45DC /* CelsiusConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B31472EA2590E507009FA365 /* ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31472EE2590E507009FA365 /* ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterUITests.swift; sourceTree = "<group>"; };
 		B31472F02590E507009FA365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3B49CD2259105CA000D45DC /* CelsiusConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelsiusConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B31472CC2590E506009FA365 /* AppDelegate.swift */,
 				B31472CE2590E506009FA365 /* SceneDelegate.swift */,
 				B31472D02590E506009FA365 /* ViewController.swift */,
+				B3B49CD2259105CA000D45DC /* CelsiusConverter.swift */,
 				B31472D22590E506009FA365 /* Main.storyboard */,
 				B31472D52590E507009FA365 /* Assets.xcassets */,
 				B31472D72590E507009FA365 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B31472D12590E506009FA365 /* ViewController.swift in Sources */,
+				B3B49CD3259105CA000D45DC /* CelsiusConverter.swift in Sources */,
 				B31472CD2590E506009FA365 /* AppDelegate.swift in Sources */,
 				B31472CF2590E506009FA365 /* SceneDelegate.swift in Sources */,
 			);

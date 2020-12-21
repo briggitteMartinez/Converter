@@ -44,6 +44,9 @@
                             <constraint firstItem="621-0V-2v2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="tBO-V4-WOr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="621-0V-2v2" id="KwR-fl-Md9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

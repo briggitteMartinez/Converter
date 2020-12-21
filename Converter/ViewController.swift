@@ -7,18 +7,30 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    private var temperatureValues = [Int]()
+    
+
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
+    private var temperatureValues = (-100...100).map{$0}//[Int]()
+    
+    let coverter = CelsiusConverter()
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         for index in  -100...100 {
             temperatureValues.append(index)
         }
+        */
         
+        temperatureLabel.text = "0 °F"
     }
     
 
@@ -27,12 +39,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        return temperatureValues.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return ("\(temperatureValues[row]) °C")
     }
+    
+
     
 
 }
