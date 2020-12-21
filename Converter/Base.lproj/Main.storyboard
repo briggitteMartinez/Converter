@@ -45,6 +45,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="celsiusPicker" destination="Rhl-A1-o2o" id="T3u-TA-NhS"/>
                         <outlet property="temperatureLabel" destination="621-0V-2v2" id="KwR-fl-Md9"/>
                     </connections>
                 </viewController>

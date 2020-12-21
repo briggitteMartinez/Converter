@@ -14,10 +14,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
 
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var celsiusPicker: UIPickerView!
     
-    private var temperatureValues = (-100...100).map{$0}//[Int]()
+    private let userDefaultsRowKey = "defaultsPickerRow"
     
-    let coverter = CelsiusConverter()
+    
+    private var temperatureValues = (-100...100).map{$0 * -1}//[Int]()
+    
+    let converter = CelsiusConverter()
     
     
     
@@ -29,8 +33,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             temperatureValues.append(index)
         }
         */
+        let defaultPickerRow = initialPickerRow()
         
-        temperatureLabel.text = "0 °F"
+        celsiusPicker.selectRow(defaultPickerRow, inComponent: 0, animated: false)
+        pickerView(celsiusPicker, didSelectRow: defaultPickerRow, inComponent: 0)
+        
+        //temperatureLabel.text = "0 °F"
     }
     
 
@@ -46,8 +54,30 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return ("\(temperatureValues[row]) °C")
     }
     
-
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let degreeC = temperatureValues[row]
+        let degreeF = converter.degreesFarenheit(degreeCelsius: degreeC)
+        
+        temperatureLabel.text = "\(degreeF) °F"
+        
+        savedSelected(row: row)
+    }
     
+    func initialPickerRow() -> Int {
+        
+        let savedRow = UserDefaults.standard.object(forKey: userDefaultsRowKey) as? Int
+        
+        if let row = savedRow{
+            return row
+        }else{
+            return temperatureValues.count / 2
+        }
+    }
 
+    func savedSelected(row: Int){
+        let defaults = UserDefaults.standard
+        defaults.set(row, forKey: userDefaultsRowKey)
+        defaults.synchronize()
+    }
 }
 
