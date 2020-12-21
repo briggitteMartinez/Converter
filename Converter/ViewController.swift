@@ -9,10 +9,16 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    private var temperatureValues = [Int]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        for index in  -100...100 {
+            temperatureValues.append(index)
+        }
+        
     }
     
 
@@ -25,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Briggan"
+        return ("\(temperatureValues[row]) °C")
     }
     
 
